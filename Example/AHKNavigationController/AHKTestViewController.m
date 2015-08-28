@@ -1,5 +1,7 @@
 #import "AHKTestViewController.h"
 
+#import "AHKNavigationController.h"
+
 @interface AHKTestViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic, assign) IBOutlet UILabel *titleLabel;
@@ -16,6 +18,11 @@
         self.title = [num stringValue];
     }
     return self;
+}
+- (IBAction)startStop:(id)sender {
+	AHKNavigationController* navController=(AHKNavigationController*)self.navigationController;
+	
+	navController.stopSwipeBack=!navController.stopSwipeBack;
 }
 
 - (void)viewDidLoad
